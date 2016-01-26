@@ -1,6 +1,7 @@
 'use strict'
 
 const Todo = use('App/Model/Todo')
+const Validator = use('Validator')
 
 class TodoController {
 
@@ -20,7 +21,27 @@ class TodoController {
       response.send('Show method')
     }
 
-    * store (request, response) {}
+    * store (request, response) {
+      const rules = {
+        body: 'required',
+        completed: 'required'
+      }
+
+      // fetching request data
+      const data = request.all()
+      const validation = yield Validator.validate(rules, data)
+
+      // checking if validation has failed
+      if (validation.fails()) {
+        return validation.messages()
+      }
+      // Validation successful, go ahead
+      response.json({success: 'Yay! :)'})
+    }
+
+    * edit (request, response) {
+      response.send('Edit method')
+    }
     * update (request, response) {}
     * destroy (request, response) {}
 }
