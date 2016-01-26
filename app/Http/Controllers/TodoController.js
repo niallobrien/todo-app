@@ -6,20 +6,21 @@ class TodoController {
 
     * index (request, response) {
       const todos = yield Todo.all()
-      const view = yield response.view('todos/index', {todos: todos})
-      if (request.is('json','application')) response.json(todos)
+      if (request.is('json','application')) return response.json({hello:"world"})
+      const view = yield response.view('todos/index', {todos: todos.toJSON()})
       response.send(view)
+    }
+
+    * create (request, response) {
+      const view = yield response.view('todos/create')
+      response.send(view)
+    }
+
+    * show (request, response) {
+      response.send('Show method')
     }
 
     * store (request, response) {}
-
-    * show (request, response) {
-      let params = request.params()
-      const todo = yield Todo.find(params.id)
-      const view = yield response.view('index', {todo: todo })
-      response.send(view)
-    }
-
     * update (request, response) {}
     * destroy (request, response) {}
 }
