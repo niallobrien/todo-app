@@ -1,0 +1,12 @@
+{% extends 'layouts/layout' %}
+
+{% block content %}
+<ul>
+  <pre>{{ todos | json }}</pre>
+  {% for todo in todos %}
+    <li>{{ todo.id }}</li>
+  {% else %}
+    <p> There are no todos, why not create one?</p>
+  {% endfor %}
+</ul>
+{% endblock %}

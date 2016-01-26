@@ -1,0 +1,41 @@
+{
+  "name": "adonis-app",
+  "version": "2.0.0",
+  "description": "Adonisjs application template",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --harmony_proxies server.js",
+    "server": "node --harmony_proxies server.js"
+  },
+  "author": "adonisjs",
+  "license": "MIT",
+  "dependencies": {
+    "adonis-ace": "^2.0.6",
+    "adonis-commands": "^2.0.2",
+    "adonis-fold": "^2.0.1",
+    "adonis-framework": "^2.0.7",
+    "adonis-lucid": "^2.0.3",
+    "adonis-middleware": "^1.0.3",
+    "ouch": "^0.2.0-beta",
+    "pg": "^4.4.3"
+  },
+  "autoload": {
+    "App": "./app"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-exec": "^2.1.2",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.2.0",
+    "gulp-watch": "^4.3.5",
+    "milligram-stylus": "^1.0.0"
+  }
+}
